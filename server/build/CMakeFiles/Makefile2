@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/thxssio/RealTimeSystem/server/build
 
 # The main recursive "all" target.
 all: CMakeFiles/GPSReader.dir/all
+all: CMakeFiles/GPSServer.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,6 +73,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/GPSReader.dir/clean
+clean: CMakeFiles/GPSServer.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -99,6 +101,32 @@ GPSReader: CMakeFiles/GPSReader.dir/rule
 CMakeFiles/GPSReader.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/clean
 .PHONY : CMakeFiles/GPSReader.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/GPSServer.dir
+
+# All Build rule for target.
+CMakeFiles/GPSServer.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=5,6,7,8 "Built target GPSServer"
+.PHONY : CMakeFiles/GPSServer.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/GPSServer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thxssio/RealTimeSystem/server/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/GPSServer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thxssio/RealTimeSystem/server/build/CMakeFiles 0
+.PHONY : CMakeFiles/GPSServer.dir/rule
+
+# Convenience name for target.
+GPSServer: CMakeFiles/GPSServer.dir/rule
+.PHONY : GPSServer
+
+# clean rule for target.
+CMakeFiles/GPSServer.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/clean
+.PHONY : CMakeFiles/GPSServer.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,17 +1,24 @@
 cmake_minimum_required(VERSION 3.10)
-project(GPSReader)
 
-set(CMAKE_C_STANDARD 99)
-set(CMAKE_C_STANDARD_REQUIRED True)
+# Defina o nome do projeto
+project(RealTimeSystem)
 
+# Adicione o diretório de inclusão
 include_directories(src)
-include_directories(src/gps)
-include_directories(src/utils)
 
-add_executable(GPSReader
-    src/main.c
-    src/gps/gps.c
-    src/utils/utils.c
-)
+# Adicione o caminho para os módulos CMake
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+# Encontre a biblioteca libmicrohttpd
+find_package(Microhttpd REQUIRED)
+
+# Defina o diretório de saída para os binários
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+# Adicione os arquivos fonte
+add_executable(GPSReader src/main.c src/gps/gps.c src/utils/utils.c)
+add_executable(GPSServer src/server.c src/gps/gps.c src/utils/utils.c)
+
+# Adicione bibliotecas necessárias
+target_link_libraries(GPSServer ${MICROHTTPD_LIBRARIES} pthread)
+target_link_libraries(GPSReader pthread)

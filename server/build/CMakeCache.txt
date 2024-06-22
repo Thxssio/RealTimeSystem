@@ -145,7 +145,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=GPSReader
+CMAKE_PROJECT_NAME:STATIC=RealTimeSystem
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -209,14 +209,20 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Value Computed by CMake
-GPSReader_BINARY_DIR:STATIC=/home/thxssio/RealTimeSystem/server/build
+//Path to a file.
+MICROHTTPD_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+MICROHTTPD_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libmicrohttpd.so
 
 //Value Computed by CMake
-GPSReader_IS_TOP_LEVEL:STATIC=ON
+RealTimeSystem_BINARY_DIR:STATIC=/home/thxssio/RealTimeSystem/server/build
 
 //Value Computed by CMake
-GPSReader_SOURCE_DIR:STATIC=/home/thxssio/RealTimeSystem/server
+RealTimeSystem_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+RealTimeSystem_SOURCE_DIR:STATIC=/home/thxssio/RealTimeSystem/server
 
 
 ########################
@@ -366,4 +372,6 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Microhttpd
+FIND_PACKAGE_MESSAGE_DETAILS_Microhttpd:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libmicrohttpd.so][v()]
 

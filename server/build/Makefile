@@ -129,12 +129,26 @@ GPSReader/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/build
 .PHONY : GPSReader/fast
 
+#=============================================================================
+# Target rules for targets named GPSServer
+
+# Build rule for target.
+GPSServer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GPSServer
+.PHONY : GPSServer
+
+# fast build rule for target.
+GPSServer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/build
+.PHONY : GPSServer/fast
+
 src/gps/gps.o: src/gps/gps.c.o
 .PHONY : src/gps/gps.o
 
 # target to build an object file
 src/gps/gps.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/gps/gps.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps/gps.c.o
 .PHONY : src/gps/gps.c.o
 
 src/gps/gps.i: src/gps/gps.c.i
@@ -143,6 +157,7 @@ src/gps/gps.i: src/gps/gps.c.i
 # target to preprocess a source file
 src/gps/gps.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/gps/gps.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps/gps.c.i
 .PHONY : src/gps/gps.c.i
 
 src/gps/gps.s: src/gps/gps.c.s
@@ -151,6 +166,7 @@ src/gps/gps.s: src/gps/gps.c.s
 # target to generate assembly for a file
 src/gps/gps.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/gps/gps.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps/gps.c.s
 .PHONY : src/gps/gps.c.s
 
 src/main.o: src/main.c.o
@@ -177,12 +193,37 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/server.o: src/server.c.o
+.PHONY : src/server.o
+
+# target to build an object file
+src/server.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/server.c.o
+.PHONY : src/server.c.o
+
+src/server.i: src/server.c.i
+.PHONY : src/server.i
+
+# target to preprocess a source file
+src/server.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/server.c.i
+.PHONY : src/server.c.i
+
+src/server.s: src/server.c.s
+.PHONY : src/server.s
+
+# target to generate assembly for a file
+src/server.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/server.c.s
+.PHONY : src/server.c.s
+
 src/utils/utils.o: src/utils/utils.c.o
 .PHONY : src/utils/utils.o
 
 # target to build an object file
 src/utils/utils.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/utils/utils.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/utils/utils.c.o
 .PHONY : src/utils/utils.c.o
 
 src/utils/utils.i: src/utils/utils.c.i
@@ -191,6 +232,7 @@ src/utils/utils.i: src/utils/utils.c.i
 # target to preprocess a source file
 src/utils/utils.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/utils/utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/utils/utils.c.i
 .PHONY : src/utils/utils.c.i
 
 src/utils/utils.s: src/utils/utils.c.s
@@ -199,6 +241,7 @@ src/utils/utils.s: src/utils/utils.c.s
 # target to generate assembly for a file
 src/utils/utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/utils/utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/utils/utils.c.s
 .PHONY : src/utils/utils.c.s
 
 # Help Target
@@ -210,12 +253,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... GPSReader"
+	@echo "... GPSServer"
 	@echo "... src/gps/gps.o"
 	@echo "... src/gps/gps.i"
 	@echo "... src/gps/gps.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/server.o"
+	@echo "... src/server.i"
+	@echo "... src/server.s"
 	@echo "... src/utils/utils.o"
 	@echo "... src/utils/utils.i"
 	@echo "... src/utils/utils.s"
