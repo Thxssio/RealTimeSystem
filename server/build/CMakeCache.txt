@@ -224,6 +224,12 @@ RealTimeSystem_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 RealTimeSystem_SOURCE_DIR:STATIC=/home/thxssio/RealTimeSystem/server
 
+//Path to a file.
+SQLite3_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+SQLite3_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libsqlite3.so
+
 
 ########################
 # INTERNAL cache entries
@@ -374,4 +380,10 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Microhttpd
 FIND_PACKAGE_MESSAGE_DETAILS_Microhttpd:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libmicrohttpd.so][v()]
+//Details about finding SQLite3
+FIND_PACKAGE_MESSAGE_DETAILS_SQLite3:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libsqlite3.so][v3.37.2()]
+//ADVANCED property for variable: SQLite3_INCLUDE_DIR
+SQLite3_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SQLite3_LIBRARY
+SQLite3_LIBRARY-ADVANCED:INTERNAL=1
 

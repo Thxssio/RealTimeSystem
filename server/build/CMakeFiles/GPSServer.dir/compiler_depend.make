@@ -188,6 +188,7 @@ CMakeFiles/GPSServer.dir/src/server.c.o: ../src/server.c \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
+  /usr/include/sqlite3.h \
   ../src/gps/gps.h \
   /usr/include/termios.h \
   /usr/include/x86_64-linux-gnu/bits/termios.h \
@@ -399,6 +400,8 @@ CMakeFiles/GPSServer.dir/src/utils/utils.c.o: ../src/utils/utils.c \
 /usr/include/x86_64-linux-gnu/bits/termios-tcflow.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/sqlite3.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
