@@ -1,0 +1,58 @@
+# Ignore build directories
+/build/
+/bin/
+/lib/
+/out/
+
+# Ignore CMake generated files
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/compile_commands.json
+
+# Ignore executables and object files
+*.o
+*.a
+*.so
+*.exe
+*.out
+*.dSYM
+
+# Ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Ignore Python cache and virtual environments
+__pycache__/
+/*.py[cod]
+*.egg-info/
+*.egg
+
+# Ignore node_modules for the client
+/client/node_modules/
+/client/.parcel-cache/
+/client/dist/
+/client/.cache/
+
+# Ignore IDE and editor specific files
+.vscode/
+/.idea/
+/*.swp
+*.swo
+*.swn
+
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
+
+# Ignore npm and yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore other sensitive or temporary files
+.env
+*.bak
+*.tmp
+*.temp
