@@ -125,6 +125,7 @@ bin/GPSServer: CMakeFiles/GPSServer.dir/src/gps/gps.c.o
 bin/GPSServer: CMakeFiles/GPSServer.dir/src/utils/utils.c.o
 bin/GPSServer: CMakeFiles/GPSServer.dir/build.make
 bin/GPSServer: /usr/lib/x86_64-linux-gnu/libmicrohttpd.so
+bin/GPSServer: /usr/lib/x86_64-linux-gnu/libsqlite3.so
 bin/GPSServer: CMakeFiles/GPSServer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable bin/GPSServer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GPSServer.dir/link.txt --verbose=$(VERBOSE)
