@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/GPSServer.dir/src/server.c.o CMakeFiles/GPSServer.dir/src/gps/gps.c.o CMakeFiles/GPSServer.dir/src/utils/utils.c.o -o bin/GPSServer  /usr/lib/x86_64-linux-gnu/libmicrohttpd.so /usr/lib/x86_64-linux-gnu/libsqlite3.so -ljson-c -lpthread 
