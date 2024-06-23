@@ -1,4 +1,0 @@
-/home/thxssio/RealTimeSystem/server/build/CMakeFiles/GPSReader.dir
-/home/thxssio/RealTimeSystem/server/build/CMakeFiles/GPSServer.dir
-/home/thxssio/RealTimeSystem/server/build/CMakeFiles/edit_cache.dir
-/home/thxssio/RealTimeSystem/server/build/CMakeFiles/rebuild_cache.dir
