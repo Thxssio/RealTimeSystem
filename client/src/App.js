@@ -7,10 +7,9 @@ import './styles.css';
 const SERVER_IP = process.env.REACT_APP_SERVER_IP || 'http://localhost:8888';
 
 // Cria o ícone personalizado usando CSS
-const createCustomIcon = () => {
+const createCustomIcon = (status) => {
   return L.divIcon({
-    className: 'marker',
-    html: '<div class="marker"></div>',
+    className: `marker ${status === 'disconnected' ? 'disconnected' : 'connected'}`,
     iconSize: [20, 20],
     iconAnchor: [10, 10],
     popupAnchor: [0, -10],
@@ -24,8 +23,8 @@ const App = () => {
   const mapRef = useRef();
   const hasCenteredMap = useRef(false);
 
-  const isValidCoordinate = (latitude, longitude) => {
-    return latitude !== 0 && longitude !== 0 && latitude >= -90 && latitude <= 90 && longitude >= -180 && longitude <= 180;
+  const isZeroedData = (data) => {
+    return data.latitude === 0 && data.longitude === 0 && data.altitude === 0 && data.quality === 0 && data.satellites === 0;
   };
 
   useEffect(() => {
@@ -33,19 +32,20 @@ const App = () => {
       try {
         const response = await fetch(`${SERVER_IP}/gps-data`);
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`Erro HTTP! status: ${response.status}`);
         }
         const data = await response.json();
-        if (isValidCoordinate(data.latitude, data.longitude)) {
-          console.log("Received GPS data:", data);
-          setGpsData(data);
-          setLoading(false);
-        } else {
-          console.error("Invalid GPS coordinates received:", data);
+        setGpsData(data);
+
+        if (isZeroedData(data)) {
+          console.error("Dados GPS zerados recebidos:", data);
           setLoading(true);
+        } else {
+          console.log("Dados GPS recebidos:", data);
+          setLoading(false);
         }
       } catch (error) {
-        console.error("Failed to fetch GPS data:", error);
+        console.error("Falha ao buscar dados GPS:", error);
         setError(error.toString());
         setLoading(true);
       }
@@ -57,7 +57,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (gpsData && mapRef.current && !hasCenteredMap.current) {
+    if (gpsData && !isZeroedData(gpsData) && mapRef.current && !hasCenteredMap.current) {
       const { latitude, longitude } = gpsData;
       mapRef.current.setView([latitude, longitude], 13);
       hasCenteredMap.current = true;
@@ -79,19 +79,34 @@ const App = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        {loading ? (
+        {(loading || (gpsData && isZeroedData(gpsData))) && (
           <div className="loading-overlay">
             <div className="loading-spinner"></div>
             <p>Carregando dados do GPS...</p>
           </div>
-        ) : (
-          gpsData && (
-            <Marker position={[gpsData.latitude, gpsData.longitude]} icon={createCustomIcon()}>
-              <Popup>
-                Latitude: {gpsData.latitude}, Longitude: {gpsData.longitude}, Altitude: {gpsData.altitude}m
-              </Popup>
-            </Marker>
-          )
+        )}
+        {gpsData && !isZeroedData(gpsData) && (
+          <Marker position={[gpsData.latitude, gpsData.longitude]} icon={createCustomIcon(gpsData.status)}>
+            <Popup>
+              <div>
+                <p1>Latitude: {gpsData.latitude}</p1>
+              </div>
+              <div>
+                <p1>Longitude: {gpsData.longitude}</p1>
+              </div>
+              <div>
+                <p1>Altitude: {gpsData.altitude}m</p1>
+              </div>
+              <div>
+                <p1>Status: {gpsData.status}</p1>
+              </div>
+            </Popup>
+          </Marker>
+        )}
+        {gpsData && gpsData.status === 'disconnected' && !isZeroedData(gpsData) && (
+          <div className="disconnected-overlay">
+            <p>GPS Desconectado. Exibindo última localização conhecida.</p>
+          </div>
         )}
       </MapContainer>
     </div>
