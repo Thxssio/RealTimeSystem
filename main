@@ -1,19 +1,25 @@
-#include "gps/gps.h"
-#include "utils/utils.h"
+#include "include/gps.h"
+#include "include/utils.h"
 #include <stdio.h>
 #include <unistd.h>  // Para o sleep
 #include <fcntl.h>   // Para as flags de open
 #include <termios.h> // Para configuração da porta serial
 #include <pthread.h> // Para threads, mutexes e variáveis de condição
+#include <stdbool.h> // Para o tipo de dados booleano
+#include "include/gps_sanitize.h"
 
 // Estrutura para armazenar dados GPS e um mutex para protegê-los
 typedef struct {
     gpgga_t gpgga_data;
     gprmc_t gprmc_data;
+    GSVData gsv_data;
     pthread_mutex_t data_mutex;
     pthread_cond_t data_cond;
+    pthread_cond_t connection_cond;
     int data_ready;
+    bool gps_connected;
 } gps_shared_data_t;
+
 
 // Prototipos das funções das threads
 void* thread_gps_capture(void* arg);

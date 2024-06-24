@@ -8,9 +8,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/thxssio/RealTimeSystem/server/src/gps/gps.c" "CMakeFiles/GPSServer.dir/src/gps/gps.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/gps/gps.c.o.d"
+  "/home/thxssio/RealTimeSystem/server/src/condition_handler_thread.c" "CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o.d"
+  "/home/thxssio/RealTimeSystem/server/src/device_check_thread.c" "CMakeFiles/GPSServer.dir/src/device_check_thread.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/device_check_thread.c.o.d"
+  "/home/thxssio/RealTimeSystem/server/src/gps.c" "CMakeFiles/GPSServer.dir/src/gps.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/gps.c.o.d"
+  "/home/thxssio/RealTimeSystem/server/src/gps_satellites.c" "CMakeFiles/GPSServer.dir/src/gps_satellites.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/gps_satellites.c.o.d"
+  "/home/thxssio/RealTimeSystem/server/src/gps_thread.c" "CMakeFiles/GPSServer.dir/src/gps_thread.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/gps_thread.c.o.d"
+  "/home/thxssio/RealTimeSystem/server/src/http_server_thread.c" "CMakeFiles/GPSServer.dir/src/http_server_thread.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/http_server_thread.c.o.d"
+  "/home/thxssio/RealTimeSystem/server/src/network_communication_thread.c" "CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o.d"
+  "/home/thxssio/RealTimeSystem/server/src/periodic_task_thread.c" "CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o.d"
   "/home/thxssio/RealTimeSystem/server/src/server.c" "CMakeFiles/GPSServer.dir/src/server.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/server.c.o.d"
-  "/home/thxssio/RealTimeSystem/server/src/utils/utils.c" "CMakeFiles/GPSServer.dir/src/utils/utils.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/utils/utils.c.o.d"
+  "/home/thxssio/RealTimeSystem/server/src/utils.c" "CMakeFiles/GPSServer.dir/src/utils.c.o" "gcc" "CMakeFiles/GPSServer.dir/src/utils.c.o.d"
   )
 
 # Targets to which this target links.

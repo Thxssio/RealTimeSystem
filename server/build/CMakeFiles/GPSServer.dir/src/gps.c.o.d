@@ -1,8 +1,8 @@
-CMakeFiles/GPSReader.dir/src/main.c.o: \
- /home/thxssio/RealTimeSystem/server/src/main.c \
- /usr/include/stdc-predef.h \
- /home/thxssio/RealTimeSystem/server/src/gps/gps.h /usr/include/termios.h \
- /usr/include/features.h /usr/include/features-time64.h \
+CMakeFiles/GPSServer.dir/src/gps.c.o: \
+ /home/thxssio/RealTimeSystem/server/src/gps.c /usr/include/stdc-predef.h \
+ /home/thxssio/RealTimeSystem/server/src/include/gps.h \
+ /usr/include/termios.h /usr/include/features.h \
+ /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -22,36 +22,13 @@ CMakeFiles/GPSReader.dir/src/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/termios-c_lflag.h \
  /usr/include/x86_64-linux-gnu/bits/termios-tcflow.h \
  /usr/include/x86_64-linux-gnu/bits/termios-misc.h \
- /usr/include/x86_64-linux-gnu/sys/ttydefaults.h \
- /home/thxssio/RealTimeSystem/server/src/utils/utils.h \
- /home/thxssio/RealTimeSystem/server/src/gps/gps.h /usr/include/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h /usr/include/fcntl.h \
- /usr/include/x86_64-linux-gnu/bits/fcntl.h \
- /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+ /usr/include/x86_64-linux-gnu/sys/ttydefaults.h /usr/include/pthread.h \
+ /usr/include/sched.h /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
- /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
- /usr/include/x86_64-linux-gnu/bits/stat.h \
- /usr/include/x86_64-linux-gnu/bits/struct_stat.h /usr/include/pthread.h \
- /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
@@ -72,4 +49,33 @@ CMakeFiles/GPSReader.dir/src/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
- /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h
+ /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
+ /home/thxssio/RealTimeSystem/server/src/include/nmea_types.h \
+ /home/thxssio/RealTimeSystem/server/src/include/utils.h \
+ /home/thxssio/RealTimeSystem/server/src/include/gps_satellites.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h /usr/include/fcntl.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+ /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_stat.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h

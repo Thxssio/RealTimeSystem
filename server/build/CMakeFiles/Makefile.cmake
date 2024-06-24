@@ -50,6 +50,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/GPSReader.dir/DependInfo.cmake"
   "CMakeFiles/GPSServer.dir/DependInfo.cmake"
   )

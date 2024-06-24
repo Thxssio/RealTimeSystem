@@ -117,19 +117,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named GPSReader
-
-# Build rule for target.
-GPSReader: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GPSReader
-.PHONY : GPSReader
-
-# fast build rule for target.
-GPSReader/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/build
-.PHONY : GPSReader/fast
-
-#=============================================================================
 # Target rules for targets named GPSServer
 
 # Build rule for target.
@@ -142,56 +129,197 @@ GPSServer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/build
 .PHONY : GPSServer/fast
 
-src/gps/gps.o: src/gps/gps.c.o
-.PHONY : src/gps/gps.o
+src/condition_handler_thread.o: src/condition_handler_thread.c.o
+.PHONY : src/condition_handler_thread.o
 
 # target to build an object file
-src/gps/gps.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/gps/gps.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps/gps.c.o
-.PHONY : src/gps/gps.c.o
+src/condition_handler_thread.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o
+.PHONY : src/condition_handler_thread.c.o
 
-src/gps/gps.i: src/gps/gps.c.i
-.PHONY : src/gps/gps.i
+src/condition_handler_thread.i: src/condition_handler_thread.c.i
+.PHONY : src/condition_handler_thread.i
 
 # target to preprocess a source file
-src/gps/gps.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/gps/gps.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps/gps.c.i
-.PHONY : src/gps/gps.c.i
+src/condition_handler_thread.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.i
+.PHONY : src/condition_handler_thread.c.i
 
-src/gps/gps.s: src/gps/gps.c.s
-.PHONY : src/gps/gps.s
+src/condition_handler_thread.s: src/condition_handler_thread.c.s
+.PHONY : src/condition_handler_thread.s
 
 # target to generate assembly for a file
-src/gps/gps.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/gps/gps.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps/gps.c.s
-.PHONY : src/gps/gps.c.s
+src/condition_handler_thread.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.s
+.PHONY : src/condition_handler_thread.c.s
 
-src/main.o: src/main.c.o
-.PHONY : src/main.o
+src/device_check_thread.o: src/device_check_thread.c.o
+.PHONY : src/device_check_thread.o
 
 # target to build an object file
-src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/main.c.o
-.PHONY : src/main.c.o
+src/device_check_thread.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/device_check_thread.c.o
+.PHONY : src/device_check_thread.c.o
 
-src/main.i: src/main.c.i
-.PHONY : src/main.i
+src/device_check_thread.i: src/device_check_thread.c.i
+.PHONY : src/device_check_thread.i
 
 # target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/main.c.i
-.PHONY : src/main.c.i
+src/device_check_thread.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/device_check_thread.c.i
+.PHONY : src/device_check_thread.c.i
 
-src/main.s: src/main.c.s
-.PHONY : src/main.s
+src/device_check_thread.s: src/device_check_thread.c.s
+.PHONY : src/device_check_thread.s
 
 # target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/main.c.s
-.PHONY : src/main.c.s
+src/device_check_thread.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/device_check_thread.c.s
+.PHONY : src/device_check_thread.c.s
+
+src/gps.o: src/gps.c.o
+.PHONY : src/gps.o
+
+# target to build an object file
+src/gps.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps.c.o
+.PHONY : src/gps.c.o
+
+src/gps.i: src/gps.c.i
+.PHONY : src/gps.i
+
+# target to preprocess a source file
+src/gps.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps.c.i
+.PHONY : src/gps.c.i
+
+src/gps.s: src/gps.c.s
+.PHONY : src/gps.s
+
+# target to generate assembly for a file
+src/gps.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps.c.s
+.PHONY : src/gps.c.s
+
+src/gps_satellites.o: src/gps_satellites.c.o
+.PHONY : src/gps_satellites.o
+
+# target to build an object file
+src/gps_satellites.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps_satellites.c.o
+.PHONY : src/gps_satellites.c.o
+
+src/gps_satellites.i: src/gps_satellites.c.i
+.PHONY : src/gps_satellites.i
+
+# target to preprocess a source file
+src/gps_satellites.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps_satellites.c.i
+.PHONY : src/gps_satellites.c.i
+
+src/gps_satellites.s: src/gps_satellites.c.s
+.PHONY : src/gps_satellites.s
+
+# target to generate assembly for a file
+src/gps_satellites.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps_satellites.c.s
+.PHONY : src/gps_satellites.c.s
+
+src/gps_thread.o: src/gps_thread.c.o
+.PHONY : src/gps_thread.o
+
+# target to build an object file
+src/gps_thread.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps_thread.c.o
+.PHONY : src/gps_thread.c.o
+
+src/gps_thread.i: src/gps_thread.c.i
+.PHONY : src/gps_thread.i
+
+# target to preprocess a source file
+src/gps_thread.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps_thread.c.i
+.PHONY : src/gps_thread.c.i
+
+src/gps_thread.s: src/gps_thread.c.s
+.PHONY : src/gps_thread.s
+
+# target to generate assembly for a file
+src/gps_thread.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/gps_thread.c.s
+.PHONY : src/gps_thread.c.s
+
+src/http_server_thread.o: src/http_server_thread.c.o
+.PHONY : src/http_server_thread.o
+
+# target to build an object file
+src/http_server_thread.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/http_server_thread.c.o
+.PHONY : src/http_server_thread.c.o
+
+src/http_server_thread.i: src/http_server_thread.c.i
+.PHONY : src/http_server_thread.i
+
+# target to preprocess a source file
+src/http_server_thread.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/http_server_thread.c.i
+.PHONY : src/http_server_thread.c.i
+
+src/http_server_thread.s: src/http_server_thread.c.s
+.PHONY : src/http_server_thread.s
+
+# target to generate assembly for a file
+src/http_server_thread.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/http_server_thread.c.s
+.PHONY : src/http_server_thread.c.s
+
+src/network_communication_thread.o: src/network_communication_thread.c.o
+.PHONY : src/network_communication_thread.o
+
+# target to build an object file
+src/network_communication_thread.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o
+.PHONY : src/network_communication_thread.c.o
+
+src/network_communication_thread.i: src/network_communication_thread.c.i
+.PHONY : src/network_communication_thread.i
+
+# target to preprocess a source file
+src/network_communication_thread.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/network_communication_thread.c.i
+.PHONY : src/network_communication_thread.c.i
+
+src/network_communication_thread.s: src/network_communication_thread.c.s
+.PHONY : src/network_communication_thread.s
+
+# target to generate assembly for a file
+src/network_communication_thread.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/network_communication_thread.c.s
+.PHONY : src/network_communication_thread.c.s
+
+src/periodic_task_thread.o: src/periodic_task_thread.c.o
+.PHONY : src/periodic_task_thread.o
+
+# target to build an object file
+src/periodic_task_thread.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o
+.PHONY : src/periodic_task_thread.c.o
+
+src/periodic_task_thread.i: src/periodic_task_thread.c.i
+.PHONY : src/periodic_task_thread.i
+
+# target to preprocess a source file
+src/periodic_task_thread.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.i
+.PHONY : src/periodic_task_thread.c.i
+
+src/periodic_task_thread.s: src/periodic_task_thread.c.s
+.PHONY : src/periodic_task_thread.s
+
+# target to generate assembly for a file
+src/periodic_task_thread.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.s
+.PHONY : src/periodic_task_thread.c.s
 
 src/server.o: src/server.c.o
 .PHONY : src/server.o
@@ -217,32 +345,29 @@ src/server.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/server.c.s
 .PHONY : src/server.c.s
 
-src/utils/utils.o: src/utils/utils.c.o
-.PHONY : src/utils/utils.o
+src/utils.o: src/utils.c.o
+.PHONY : src/utils.o
 
 # target to build an object file
-src/utils/utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/utils/utils.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/utils/utils.c.o
-.PHONY : src/utils/utils.c.o
+src/utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/utils.c.o
+.PHONY : src/utils.c.o
 
-src/utils/utils.i: src/utils/utils.c.i
-.PHONY : src/utils/utils.i
+src/utils.i: src/utils.c.i
+.PHONY : src/utils.i
 
 # target to preprocess a source file
-src/utils/utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/utils/utils.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/utils/utils.c.i
-.PHONY : src/utils/utils.c.i
+src/utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/utils.c.i
+.PHONY : src/utils.c.i
 
-src/utils/utils.s: src/utils/utils.c.s
-.PHONY : src/utils/utils.s
+src/utils.s: src/utils.c.s
+.PHONY : src/utils.s
 
 # target to generate assembly for a file
-src/utils/utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/src/utils/utils.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/utils/utils.c.s
-.PHONY : src/utils/utils.c.s
+src/utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/src/utils.c.s
+.PHONY : src/utils.c.s
 
 # Help Target
 help:
@@ -252,20 +377,37 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... GPSReader"
 	@echo "... GPSServer"
-	@echo "... src/gps/gps.o"
-	@echo "... src/gps/gps.i"
-	@echo "... src/gps/gps.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/condition_handler_thread.o"
+	@echo "... src/condition_handler_thread.i"
+	@echo "... src/condition_handler_thread.s"
+	@echo "... src/device_check_thread.o"
+	@echo "... src/device_check_thread.i"
+	@echo "... src/device_check_thread.s"
+	@echo "... src/gps.o"
+	@echo "... src/gps.i"
+	@echo "... src/gps.s"
+	@echo "... src/gps_satellites.o"
+	@echo "... src/gps_satellites.i"
+	@echo "... src/gps_satellites.s"
+	@echo "... src/gps_thread.o"
+	@echo "... src/gps_thread.i"
+	@echo "... src/gps_thread.s"
+	@echo "... src/http_server_thread.o"
+	@echo "... src/http_server_thread.i"
+	@echo "... src/http_server_thread.s"
+	@echo "... src/network_communication_thread.o"
+	@echo "... src/network_communication_thread.i"
+	@echo "... src/network_communication_thread.s"
+	@echo "... src/periodic_task_thread.o"
+	@echo "... src/periodic_task_thread.i"
+	@echo "... src/periodic_task_thread.s"
 	@echo "... src/server.o"
 	@echo "... src/server.i"
 	@echo "... src/server.s"
-	@echo "... src/utils/utils.o"
-	@echo "... src/utils/utils.i"
-	@echo "... src/utils/utils.s"
+	@echo "... src/utils.o"
+	@echo "... src/utils.i"
+	@echo "... src/utils.s"
 .PHONY : help
 
 
