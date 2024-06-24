@@ -83,51 +83,163 @@ CMakeFiles/GPSServer.dir/src/server.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/server.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/server.c -o CMakeFiles/GPSServer.dir/src/server.c.s
 
-CMakeFiles/GPSServer.dir/src/gps/gps.c.o: CMakeFiles/GPSServer.dir/flags.make
-CMakeFiles/GPSServer.dir/src/gps/gps.c.o: ../src/gps/gps.c
-CMakeFiles/GPSServer.dir/src/gps/gps.c.o: CMakeFiles/GPSServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/GPSServer.dir/src/gps/gps.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GPSServer.dir/src/gps/gps.c.o -MF CMakeFiles/GPSServer.dir/src/gps/gps.c.o.d -o CMakeFiles/GPSServer.dir/src/gps/gps.c.o -c /home/thxssio/RealTimeSystem/server/src/gps/gps.c
+CMakeFiles/GPSServer.dir/src/gps.c.o: CMakeFiles/GPSServer.dir/flags.make
+CMakeFiles/GPSServer.dir/src/gps.c.o: ../src/gps.c
+CMakeFiles/GPSServer.dir/src/gps.c.o: CMakeFiles/GPSServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/GPSServer.dir/src/gps.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GPSServer.dir/src/gps.c.o -MF CMakeFiles/GPSServer.dir/src/gps.c.o.d -o CMakeFiles/GPSServer.dir/src/gps.c.o -c /home/thxssio/RealTimeSystem/server/src/gps.c
 
-CMakeFiles/GPSServer.dir/src/gps/gps.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GPSServer.dir/src/gps/gps.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thxssio/RealTimeSystem/server/src/gps/gps.c > CMakeFiles/GPSServer.dir/src/gps/gps.c.i
+CMakeFiles/GPSServer.dir/src/gps.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GPSServer.dir/src/gps.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thxssio/RealTimeSystem/server/src/gps.c > CMakeFiles/GPSServer.dir/src/gps.c.i
 
-CMakeFiles/GPSServer.dir/src/gps/gps.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/gps/gps.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/gps/gps.c -o CMakeFiles/GPSServer.dir/src/gps/gps.c.s
+CMakeFiles/GPSServer.dir/src/gps.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/gps.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/gps.c -o CMakeFiles/GPSServer.dir/src/gps.c.s
 
-CMakeFiles/GPSServer.dir/src/utils/utils.c.o: CMakeFiles/GPSServer.dir/flags.make
-CMakeFiles/GPSServer.dir/src/utils/utils.c.o: ../src/utils/utils.c
-CMakeFiles/GPSServer.dir/src/utils/utils.c.o: CMakeFiles/GPSServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/GPSServer.dir/src/utils/utils.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GPSServer.dir/src/utils/utils.c.o -MF CMakeFiles/GPSServer.dir/src/utils/utils.c.o.d -o CMakeFiles/GPSServer.dir/src/utils/utils.c.o -c /home/thxssio/RealTimeSystem/server/src/utils/utils.c
+CMakeFiles/GPSServer.dir/src/utils.c.o: CMakeFiles/GPSServer.dir/flags.make
+CMakeFiles/GPSServer.dir/src/utils.c.o: ../src/utils.c
+CMakeFiles/GPSServer.dir/src/utils.c.o: CMakeFiles/GPSServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/GPSServer.dir/src/utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GPSServer.dir/src/utils.c.o -MF CMakeFiles/GPSServer.dir/src/utils.c.o.d -o CMakeFiles/GPSServer.dir/src/utils.c.o -c /home/thxssio/RealTimeSystem/server/src/utils.c
 
-CMakeFiles/GPSServer.dir/src/utils/utils.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GPSServer.dir/src/utils/utils.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thxssio/RealTimeSystem/server/src/utils/utils.c > CMakeFiles/GPSServer.dir/src/utils/utils.c.i
+CMakeFiles/GPSServer.dir/src/utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GPSServer.dir/src/utils.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thxssio/RealTimeSystem/server/src/utils.c > CMakeFiles/GPSServer.dir/src/utils.c.i
 
-CMakeFiles/GPSServer.dir/src/utils/utils.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/utils/utils.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/utils/utils.c -o CMakeFiles/GPSServer.dir/src/utils/utils.c.s
+CMakeFiles/GPSServer.dir/src/utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/utils.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/utils.c -o CMakeFiles/GPSServer.dir/src/utils.c.s
+
+CMakeFiles/GPSServer.dir/src/gps_thread.c.o: CMakeFiles/GPSServer.dir/flags.make
+CMakeFiles/GPSServer.dir/src/gps_thread.c.o: ../src/gps_thread.c
+CMakeFiles/GPSServer.dir/src/gps_thread.c.o: CMakeFiles/GPSServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/GPSServer.dir/src/gps_thread.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GPSServer.dir/src/gps_thread.c.o -MF CMakeFiles/GPSServer.dir/src/gps_thread.c.o.d -o CMakeFiles/GPSServer.dir/src/gps_thread.c.o -c /home/thxssio/RealTimeSystem/server/src/gps_thread.c
+
+CMakeFiles/GPSServer.dir/src/gps_thread.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GPSServer.dir/src/gps_thread.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thxssio/RealTimeSystem/server/src/gps_thread.c > CMakeFiles/GPSServer.dir/src/gps_thread.c.i
+
+CMakeFiles/GPSServer.dir/src/gps_thread.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/gps_thread.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/gps_thread.c -o CMakeFiles/GPSServer.dir/src/gps_thread.c.s
+
+CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o: CMakeFiles/GPSServer.dir/flags.make
+CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o: ../src/periodic_task_thread.c
+CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o: CMakeFiles/GPSServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o -MF CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o.d -o CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o -c /home/thxssio/RealTimeSystem/server/src/periodic_task_thread.c
+
+CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thxssio/RealTimeSystem/server/src/periodic_task_thread.c > CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.i
+
+CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/periodic_task_thread.c -o CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.s
+
+CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o: CMakeFiles/GPSServer.dir/flags.make
+CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o: ../src/network_communication_thread.c
+CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o: CMakeFiles/GPSServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o -MF CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o.d -o CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o -c /home/thxssio/RealTimeSystem/server/src/network_communication_thread.c
+
+CMakeFiles/GPSServer.dir/src/network_communication_thread.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GPSServer.dir/src/network_communication_thread.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thxssio/RealTimeSystem/server/src/network_communication_thread.c > CMakeFiles/GPSServer.dir/src/network_communication_thread.c.i
+
+CMakeFiles/GPSServer.dir/src/network_communication_thread.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/network_communication_thread.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/network_communication_thread.c -o CMakeFiles/GPSServer.dir/src/network_communication_thread.c.s
+
+CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o: CMakeFiles/GPSServer.dir/flags.make
+CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o: ../src/condition_handler_thread.c
+CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o: CMakeFiles/GPSServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o -MF CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o.d -o CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o -c /home/thxssio/RealTimeSystem/server/src/condition_handler_thread.c
+
+CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thxssio/RealTimeSystem/server/src/condition_handler_thread.c > CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.i
+
+CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/condition_handler_thread.c -o CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.s
+
+CMakeFiles/GPSServer.dir/src/device_check_thread.c.o: CMakeFiles/GPSServer.dir/flags.make
+CMakeFiles/GPSServer.dir/src/device_check_thread.c.o: ../src/device_check_thread.c
+CMakeFiles/GPSServer.dir/src/device_check_thread.c.o: CMakeFiles/GPSServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/GPSServer.dir/src/device_check_thread.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GPSServer.dir/src/device_check_thread.c.o -MF CMakeFiles/GPSServer.dir/src/device_check_thread.c.o.d -o CMakeFiles/GPSServer.dir/src/device_check_thread.c.o -c /home/thxssio/RealTimeSystem/server/src/device_check_thread.c
+
+CMakeFiles/GPSServer.dir/src/device_check_thread.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GPSServer.dir/src/device_check_thread.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thxssio/RealTimeSystem/server/src/device_check_thread.c > CMakeFiles/GPSServer.dir/src/device_check_thread.c.i
+
+CMakeFiles/GPSServer.dir/src/device_check_thread.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/device_check_thread.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/device_check_thread.c -o CMakeFiles/GPSServer.dir/src/device_check_thread.c.s
+
+CMakeFiles/GPSServer.dir/src/gps_satellites.c.o: CMakeFiles/GPSServer.dir/flags.make
+CMakeFiles/GPSServer.dir/src/gps_satellites.c.o: ../src/gps_satellites.c
+CMakeFiles/GPSServer.dir/src/gps_satellites.c.o: CMakeFiles/GPSServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/GPSServer.dir/src/gps_satellites.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GPSServer.dir/src/gps_satellites.c.o -MF CMakeFiles/GPSServer.dir/src/gps_satellites.c.o.d -o CMakeFiles/GPSServer.dir/src/gps_satellites.c.o -c /home/thxssio/RealTimeSystem/server/src/gps_satellites.c
+
+CMakeFiles/GPSServer.dir/src/gps_satellites.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GPSServer.dir/src/gps_satellites.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thxssio/RealTimeSystem/server/src/gps_satellites.c > CMakeFiles/GPSServer.dir/src/gps_satellites.c.i
+
+CMakeFiles/GPSServer.dir/src/gps_satellites.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/gps_satellites.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/gps_satellites.c -o CMakeFiles/GPSServer.dir/src/gps_satellites.c.s
+
+CMakeFiles/GPSServer.dir/src/http_server_thread.c.o: CMakeFiles/GPSServer.dir/flags.make
+CMakeFiles/GPSServer.dir/src/http_server_thread.c.o: ../src/http_server_thread.c
+CMakeFiles/GPSServer.dir/src/http_server_thread.c.o: CMakeFiles/GPSServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/GPSServer.dir/src/http_server_thread.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/GPSServer.dir/src/http_server_thread.c.o -MF CMakeFiles/GPSServer.dir/src/http_server_thread.c.o.d -o CMakeFiles/GPSServer.dir/src/http_server_thread.c.o -c /home/thxssio/RealTimeSystem/server/src/http_server_thread.c
+
+CMakeFiles/GPSServer.dir/src/http_server_thread.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GPSServer.dir/src/http_server_thread.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thxssio/RealTimeSystem/server/src/http_server_thread.c > CMakeFiles/GPSServer.dir/src/http_server_thread.c.i
+
+CMakeFiles/GPSServer.dir/src/http_server_thread.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GPSServer.dir/src/http_server_thread.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thxssio/RealTimeSystem/server/src/http_server_thread.c -o CMakeFiles/GPSServer.dir/src/http_server_thread.c.s
 
 # Object files for target GPSServer
 GPSServer_OBJECTS = \
 "CMakeFiles/GPSServer.dir/src/server.c.o" \
-"CMakeFiles/GPSServer.dir/src/gps/gps.c.o" \
-"CMakeFiles/GPSServer.dir/src/utils/utils.c.o"
+"CMakeFiles/GPSServer.dir/src/gps.c.o" \
+"CMakeFiles/GPSServer.dir/src/utils.c.o" \
+"CMakeFiles/GPSServer.dir/src/gps_thread.c.o" \
+"CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o" \
+"CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o" \
+"CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o" \
+"CMakeFiles/GPSServer.dir/src/device_check_thread.c.o" \
+"CMakeFiles/GPSServer.dir/src/gps_satellites.c.o" \
+"CMakeFiles/GPSServer.dir/src/http_server_thread.c.o"
 
 # External object files for target GPSServer
 GPSServer_EXTERNAL_OBJECTS =
 
 bin/GPSServer: CMakeFiles/GPSServer.dir/src/server.c.o
-bin/GPSServer: CMakeFiles/GPSServer.dir/src/gps/gps.c.o
-bin/GPSServer: CMakeFiles/GPSServer.dir/src/utils/utils.c.o
+bin/GPSServer: CMakeFiles/GPSServer.dir/src/gps.c.o
+bin/GPSServer: CMakeFiles/GPSServer.dir/src/utils.c.o
+bin/GPSServer: CMakeFiles/GPSServer.dir/src/gps_thread.c.o
+bin/GPSServer: CMakeFiles/GPSServer.dir/src/periodic_task_thread.c.o
+bin/GPSServer: CMakeFiles/GPSServer.dir/src/network_communication_thread.c.o
+bin/GPSServer: CMakeFiles/GPSServer.dir/src/condition_handler_thread.c.o
+bin/GPSServer: CMakeFiles/GPSServer.dir/src/device_check_thread.c.o
+bin/GPSServer: CMakeFiles/GPSServer.dir/src/gps_satellites.c.o
+bin/GPSServer: CMakeFiles/GPSServer.dir/src/http_server_thread.c.o
 bin/GPSServer: CMakeFiles/GPSServer.dir/build.make
 bin/GPSServer: /usr/lib/x86_64-linux-gnu/libmicrohttpd.so
 bin/GPSServer: /usr/lib/x86_64-linux-gnu/libsqlite3.so
 bin/GPSServer: CMakeFiles/GPSServer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable bin/GPSServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable bin/GPSServer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GPSServer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

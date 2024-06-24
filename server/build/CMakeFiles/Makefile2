@@ -63,7 +63,6 @@ CMAKE_BINARY_DIR = /home/thxssio/RealTimeSystem/server/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/GPSReader.dir/all
 all: CMakeFiles/GPSServer.dir/all
 .PHONY : all
 
@@ -72,35 +71,8 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/GPSReader.dir/clean
 clean: CMakeFiles/GPSServer.dir/clean
 .PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/GPSReader.dir
-
-# All Build rule for target.
-CMakeFiles/GPSReader.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=1,2,3,4 "Built target GPSReader"
-.PHONY : CMakeFiles/GPSReader.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/GPSReader.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thxssio/RealTimeSystem/server/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/GPSReader.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thxssio/RealTimeSystem/server/build/CMakeFiles 0
-.PHONY : CMakeFiles/GPSReader.dir/rule
-
-# Convenience name for target.
-GPSReader: CMakeFiles/GPSReader.dir/rule
-.PHONY : GPSReader
-
-# clean rule for target.
-CMakeFiles/GPSReader.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSReader.dir/build.make CMakeFiles/GPSReader.dir/clean
-.PHONY : CMakeFiles/GPSReader.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/GPSServer.dir
@@ -109,12 +81,12 @@ CMakeFiles/GPSReader.dir/clean:
 CMakeFiles/GPSServer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GPSServer.dir/build.make CMakeFiles/GPSServer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=5,6,7,8 "Built target GPSServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thxssio/RealTimeSystem/server/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target GPSServer"
 .PHONY : CMakeFiles/GPSServer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/GPSServer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thxssio/RealTimeSystem/server/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thxssio/RealTimeSystem/server/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/GPSServer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/thxssio/RealTimeSystem/server/build/CMakeFiles 0
 .PHONY : CMakeFiles/GPSServer.dir/rule

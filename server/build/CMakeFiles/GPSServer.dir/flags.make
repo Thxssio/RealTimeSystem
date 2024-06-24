@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/thxssio/RealTimeSystem/server/src
+C_INCLUDES = -I/home/thxssio/RealTimeSystem/server/src/include
 
 C_FLAGS = 
 

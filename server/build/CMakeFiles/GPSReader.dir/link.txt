@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/GPSReader.dir/src/main.c.o CMakeFiles/GPSReader.dir/src/gps/gps.c.o CMakeFiles/GPSReader.dir/src/utils/utils.c.o -o bin/GPSReader  -lpthread 

@@ -89,23 +89,29 @@ const App = () => {
           <Marker position={[gpsData.latitude, gpsData.longitude]} icon={createCustomIcon(gpsData.status)}>
             <Popup>
               <div>
-                <p1>Latitude: {gpsData.latitude}</p1>
+                <p>Latitude: {gpsData.latitude}</p>
+                <p>Longitude: {gpsData.longitude}</p>
+                <p>Altitude: {gpsData.altitude}m</p>
+                <p>Status: {gpsData.status}</p>
+                <p>Satélites: {gpsData.satellites}</p>
+                <p>Qualidade: {gpsData.quality}</p>
               </div>
               <div>
-                <p1>Longitude: {gpsData.longitude}</p1>
-              </div>
-              <div>
-                <p1>Altitude: {gpsData.altitude}m</p1>
-              </div>
-              <div>
-                <p1>Status: {gpsData.status}</p1>
+                <h2>Informações dos Satélites:</h2>
+                <ul>
+                  {gpsData.satellites_info.map((sat, index) => (
+                    <li key={index}>
+                      PRN: {sat.prn}, Elevação: {sat.elevation}, Azimute: {sat.azimuth}, SNR: {sat.snr}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Popup>
           </Marker>
         )}
         {gpsData && gpsData.status === 'disconnected' && !isZeroedData(gpsData) && (
           <div className="disconnected-overlay">
-            <p>GPS Desconectado. Exibindo última localização conhecida.</p>
+            <p1>GPS Desconectado. Exibindo última localização conhecida.</p1>
           </div>
         )}
       </MapContainer>

@@ -1,6 +1,7 @@
-CMakeFiles/GPSServer.dir/src/server.c.o: \
- /home/thxssio/RealTimeSystem/server/src/server.c \
+CMakeFiles/GPSServer.dir/src/device_check_thread.c.o: \
+ /home/thxssio/RealTimeSystem/server/src/device_check_thread.c \
  /usr/include/stdc-predef.h \
+ /home/thxssio/RealTimeSystem/server/src/include/device_check_thread.h \
  /home/thxssio/RealTimeSystem/server/src/include/gps.h \
  /usr/include/termios.h /usr/include/features.h \
  /usr/include/features-time64.h \
@@ -54,27 +55,8 @@ CMakeFiles/GPSServer.dir/src/server.c.o: \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
  /home/thxssio/RealTimeSystem/server/src/include/nmea_types.h \
  /home/thxssio/RealTimeSystem/server/src/include/utils.h \
- /home/thxssio/RealTimeSystem/server/src/include/threads.h \
- /home/thxssio/RealTimeSystem/server/src/include/gps_thread.h \
  /home/thxssio/RealTimeSystem/server/src/include/gps.h \
- /home/thxssio/RealTimeSystem/server/src/include/periodic_task_thread.h \
- /home/thxssio/RealTimeSystem/server/src/include/network_communication_thread.h \
- /home/thxssio/RealTimeSystem/server/src/include/condition_handler_thread.h \
- /home/thxssio/RealTimeSystem/server/src/include/device_check_thread.h \
- /home/thxssio/RealTimeSystem/server/src/include/http_server_thread.h \
- /usr/include/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
