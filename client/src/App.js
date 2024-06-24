@@ -22,6 +22,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const mapRef = useRef();
   const hasCenteredMap = useRef(false);
+  const [command, setCommand] = useState('');
 
   const isZeroedData = (data) => {
     return data.latitude === 0 && data.longitude === 0 && data.altitude === 0 && data.quality === 0 && data.satellites === 0;
@@ -64,6 +65,26 @@ const App = () => {
     }
   }, [gpsData]);
 
+  const handleCommandSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(`${SERVER_IP}/send-command`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ command }),
+      });
+      if (!response.ok) {
+        throw new Error(`Erro ao enviar comando! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log("Resposta do servidor:", data);
+    } catch (error) {
+      console.error("Falha ao enviar comando:", error);
+    }
+  };
+
   // Definindo limites para a área visualizável no mapa
   const bounds = [
     [-85, -180], // sudoeste
@@ -73,6 +94,15 @@ const App = () => {
   return (
     <div className="App">
       <h1>GPS Tracker</h1>
+      <form className="command-form" onSubmit={handleCommandSubmit}>
+        <input
+          type="text"
+          value={command}
+          onChange={(e) => setCommand(e.target.value)}
+          placeholder="Digite o comando"
+        />
+        <button type="submit">Enviar Comando</button>
+      </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <MapContainer ref={mapRef} center={[0, 0]} zoom={10} minZoom={2} maxZoom={18} maxBounds={bounds} maxBoundsViscosity={1.0} style={{ height: '100vh', width: '100vw', position: 'absolute', top: 0, left: 0 }}>
         <TileLayer
