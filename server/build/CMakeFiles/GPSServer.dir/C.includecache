@@ -125,6 +125,8 @@ stdio.h
 -
 signal.h
 -
+stdlib.h
+-
 
 /home/odroid/RealTimeSystem/server/src/include/condition_handler_thread.h
 gps.h

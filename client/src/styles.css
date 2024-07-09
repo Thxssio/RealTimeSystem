@@ -75,13 +75,13 @@ p1 {
 
 .disconnected-overlay {
   position: absolute;
-  bottom: 20px;
+  bottom: 60px; /* Ajuste a posição para não sobrepor o formulário */
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(255, 0, 0, 0.8);
   padding: 10px;
   border-radius: 5px;
-  z-index: 1000; /* Certifique-se de que o z-index seja maior que o do mapa */
+  z-index: 1100; /* Certifique-se de que o z-index seja maior que o do formulário */
   font-size: 16px;
   font-weight: bold;
 }
@@ -94,37 +94,27 @@ p1 {
   background-color: red;
 }
 
-.popup-content {
-  font-size: 14px;
-  line-height: 1.5;
-  max-width: 250px; /* Limitar a largura do popup */
-}
-
-.popup-content p {
-  margin: 4px 0;
-}
-
-.popup-content h2 {
-  margin-top: 10px;
-  margin-bottom: 5px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.satellite-info, .mpu9250-info {
-  list-style-type: none;
-  padding: 0;
-}
-
-.satellite-info li, .mpu9250-info li {
-  margin: 2px 0;
-}
-
-.vehicle-3d-canvas {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 200px;
-  height: 200px;
+.command-form {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.command-form input {
+  margin-right: 10px;
+  padding: 5px;
+  flex: 1;
+}
+
+.command-form button {
+  margin-left: 5px;
+  padding: 5px 10px;
 }

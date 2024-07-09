@@ -1,12 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import { Canvas } from '@react-three/fiber';
-import Vehicle3D from './Vehicle3D';
 import 'leaflet/dist/leaflet.css';
 import './styles.css';
 
-const SERVER_IP = process.env.REACT_APP_SERVER_IP || 'http://192.168.0.85:8888';
+const SERVER_IP = 'http://192.168.0.85:8888';
 
 // Cria o ícone personalizado usando CSS
 const createCustomIcon = (status) => {
@@ -22,6 +20,7 @@ const App = () => {
   const [gpsData, setGpsData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [command, setCommand] = useState('');
   const mapRef = useRef();
   const hasCenteredMap = useRef(false);
 
@@ -66,16 +65,70 @@ const App = () => {
     }
   }, [gpsData]);
 
+  const handleCommandSubmit = async (e) => {
+    e.preventDefault();
+    console.log('Comando enviado:', command); // Log do comando enviado
+
+    const commandData = { command };
+    console.log('Dados do comando enviados:', JSON.stringify(commandData)); // Log dos dados enviados
+
+    try {
+        const response = await fetch(`${SERVER_IP}/send-command`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(commandData),
+        });
+
+        console.log('Requisição enviada:', response); // Log da requisição enviada
+
+        if (!response.ok) {
+            throw new Error(`Erro ao enviar comando! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('Resposta do servidor:', data);
+
+    } catch (error) {
+        console.error('Falha ao enviar comando:', error);
+    }
+};
+
   const bounds = [
-    [-85, -180], // sudoeste
-    [85, 180]    // nordeste
+    [-85, -180],
+    [85, 180]
   ];
 
   return (
     <div className="App">
       <h1>GPS Tracker</h1>
+      <form className="command-form" onSubmit={handleCommandSubmit}>
+        <input
+          type="text"
+          value={command}
+          onChange={(e) => setCommand(e.target.value)}
+          placeholder="Digite o comando"
+        />
+        <button type="submit">Enviar Comando</button>
+      </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <MapContainer ref={mapRef} center={[0, 0]} zoom={10} minZoom={2} maxZoom={18} maxBounds={bounds} maxBoundsViscosity={1.0} style={{ height: '100vh', width: '100vw', position: 'absolute', top: 0, left: 0 }}>
+      <MapContainer
+        ref={mapRef}
+        center={[0, 0]}
+        zoom={10}
+        minZoom={2}
+        maxZoom={18}
+        maxBounds={bounds}
+        maxBoundsViscosity={1.0}
+        style={{
+          height: '100vh',
+          width: '100vw',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+        }}
+      >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -132,16 +185,6 @@ const App = () => {
           </div>
         )}
       </MapContainer>
-      <Canvas className="vehicle-3d-canvas">
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        {gpsData && !isZeroedData(gpsData) && (
-          <Vehicle3D 
-            position={[gpsData.latitude, gpsData.altitude, gpsData.longitude]} 
-            rotation={[gpsData.gyro_x, gpsData.gyro_y, gpsData.gyro_z]} 
-          />
-        )}
-      </Canvas>
     </div>
   );
 };
