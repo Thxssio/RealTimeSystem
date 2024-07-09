@@ -124,3 +124,9 @@ p1 {
 .marker.disconnected {
   background-color: red;
 }
+
+.reset-button{
+  margin-left: 10px;
+  border-radius: 50%;
+
+}

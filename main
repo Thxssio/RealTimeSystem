@@ -6,7 +6,6 @@
 #include <termios.h> // Para configuração da porta serial
 #include <pthread.h> // Para threads, mutexes e variáveis de condição
 #include <stdbool.h> // Para o tipo de dados booleano
-#include "include/gps_sanitize.h"
 
 // Estrutura para armazenar dados GPS e um mutex para protegê-los
 typedef struct {

@@ -1,15 +1,17 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-import './styles.css';
+import React, { useEffect, useState, useRef } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import "./styles.css";
 
-const SERVER_IP = process.env.REACT_APP_SERVER_IP || 'http://localhost:8888';
+const SERVER_IP = process.env.REACT_APP_SERVER_IP || "http://localhost:8888";
 
 // Cria o ícone personalizado usando CSS
 const createCustomIcon = (status) => {
   return L.divIcon({
-    className: `marker ${status === 'disconnected' ? 'disconnected' : 'connected'}`,
+    className: `marker ${
+      status === "disconnected" ? "disconnected" : "connected"
+    }`,
     iconSize: [20, 20],
     iconAnchor: [10, 10],
     popupAnchor: [0, -10],
@@ -22,10 +24,17 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const mapRef = useRef();
   const hasCenteredMap = useRef(false);
-  const [command, setCommand] = useState('');
+  const [command, setCommand] = useState("");
+  const [gpsPath, setGpsPath] = useState([]);
 
   const isZeroedData = (data) => {
-    return data.latitude === 0 && data.longitude === 0 && data.altitude === 0 && data.quality === 0 && data.satellites === 0;
+    return (
+      data.latitude === 0 &&
+      data.longitude === 0 &&
+      data.altitude === 0 &&
+      data.quality === 0 &&
+      data.satellites === 0
+    );
   };
 
   useEffect(() => {
@@ -58,10 +67,34 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (gpsData && !isZeroedData(gpsData) && mapRef.current && !hasCenteredMap.current) {
+    if (
+      gpsData &&
+      !isZeroedData(gpsData) &&
+      mapRef.current &&
+      !hasCenteredMap.current
+    ) {
       const { latitude, longitude } = gpsData;
       mapRef.current.setView([latitude, longitude], 13);
       hasCenteredMap.current = true;
+    }
+  }, [gpsData]);
+
+  useEffect(() => {
+    if (
+      gpsData &&
+      !isZeroedData(gpsData) &&
+      mapRef.current &&
+      !hasCenteredMap.current
+    ) {
+      const { latitude, longitude } = gpsData;
+
+      setGpsPath((current) => {
+        const lastPoint = current[current.length - 1];
+        if (lastPoint != [latitude, longitude]) {
+          return [...current, [latitude, longitude]];
+        }
+        return current;
+      });
     }
   }, [gpsData]);
 
@@ -69,9 +102,9 @@ const App = () => {
     e.preventDefault();
     try {
       const response = await fetch(`${SERVER_IP}/send-command`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ command }),
       });
@@ -88,7 +121,7 @@ const App = () => {
   // Definindo limites para a área visualizável no mapa
   const bounds = [
     [-85, -180], // sudoeste
-    [85, 180]    // nordeste
+    [85, 180], // nordeste
   ];
 
   return (
@@ -102,9 +135,27 @@ const App = () => {
           placeholder="Digite o comando"
         />
         <button type="submit">Enviar Comando</button>
+        <button class="reset-button" type="button" onClick={() => setGpsPath([])}>
+          Resetar caminho
+        </button>
       </form>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <MapContainer ref={mapRef} center={[0, 0]} zoom={10} minZoom={2} maxZoom={18} maxBounds={bounds} maxBoundsViscosity={1.0} style={{ height: '100vh', width: '100vw', position: 'absolute', top: 0, left: 0 }}>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      <MapContainer
+        ref={mapRef}
+        center={[0,0]}
+        zoom={10}
+        minZoom={2}
+        maxZoom={18}
+        maxBounds={bounds}
+        maxBoundsViscosity={1.0}
+        style={{
+          height: "100vh",
+          width: "100vw",
+          position: "absolute",
+          top: 0,
+          left: 0,
+        }}
+      >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -116,7 +167,10 @@ const App = () => {
           </div>
         )}
         {gpsData && !isZeroedData(gpsData) && (
-          <Marker position={[gpsData.latitude, gpsData.longitude]} icon={createCustomIcon(gpsData.status)}>
+          <Marker
+            position={[gpsData.latitude, gpsData.longitude]}
+            icon={createCustomIcon(gpsData.status)}
+          >
             <Popup>
               <div>
                 <p>Latitude: {gpsData.latitude}</p>
@@ -131,7 +185,8 @@ const App = () => {
                 <ul>
                   {gpsData.satellites_info.map((sat, index) => (
                     <li key={index}>
-                      PRN: {sat.prn}, Elevação: {sat.elevation}, Azimute: {sat.azimuth}, SNR: {sat.snr}
+                      PRN: {sat.prn}, Elevação: {sat.elevation}, Azimute:{" "}
+                      {sat.azimuth}, SNR: {sat.snr}
                     </li>
                   ))}
                 </ul>
@@ -139,11 +194,19 @@ const App = () => {
             </Popup>
           </Marker>
         )}
-        {gpsData && gpsData.status === 'disconnected' && !isZeroedData(gpsData) && (
-          <div className="disconnected-overlay">
-            <p1>GPS Desconectado. Exibindo última localização conhecida.</p1>
-          </div>
-        )}
+        {gpsPath.map((point) => {
+          <Marker
+            position={point}
+            icon={createCustomIcon(gpsData.status)}
+          ></Marker>;
+        })}
+        {gpsData &&
+          gpsData.status === "disconnected" &&
+          !isZeroedData(gpsData) && (
+            <div className="disconnected-overlay">
+              <p1>GPS Desconectado. Exibindo última localização conhecida.</p1>
+            </div>
+          )}
       </MapContainer>
     </div>
   );
