@@ -5,6 +5,7 @@
 #include <pthread.h>
 #include <stdbool.h>
 #include "nmea_types.h"
+#include "mpu9250_types.h"
 
 typedef struct {
     gpgga_t gpgga_data;
@@ -15,6 +16,7 @@ typedef struct {
     pthread_cond_t connection_cond;
     int data_ready;
     bool gps_connected;
+    mpu9250_data_t mpu9250_data;
 } gps_shared_data_t;
 
 int setup_gps_device(const char *device_path, speed_t baud_rate);

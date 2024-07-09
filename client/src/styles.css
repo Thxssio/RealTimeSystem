@@ -93,3 +93,38 @@ p1 {
 .marker.disconnected {
   background-color: red;
 }
+
+.popup-content {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 250px; /* Limitar a largura do popup */
+}
+
+.popup-content p {
+  margin: 4px 0;
+}
+
+.popup-content h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.satellite-info, .mpu9250-info {
+  list-style-type: none;
+  padding: 0;
+}
+
+.satellite-info li, .mpu9250-info li {
+  margin: 2px 0;
+}
+
+.vehicle-3d-canvas {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 200px;
+  height: 200px;
+  z-index: 1000;
+}

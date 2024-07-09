@@ -5,15 +5,19 @@ project(RealTimeSystem)
 
 # Adicione o diretório de inclusão
 include_directories(src/include)
-include_directories(${SQLite3_INCLUDE_DIRS})
 
 # Adicione o caminho para os módulos CMake
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-# Encontre a biblioteca libmicrohttpd
+# Encontre as bibliotecas necessárias
 find_package(Microhttpd REQUIRED)
 find_package(SQLite3 REQUIRED)
 find_package(json-c REQUIRED)
+
+# Adicionar diretórios de inclusão das bibliotecas
+include_directories(${MICROHTTPD_INCLUDE_DIRS})
+include_directories(${SQLite3_INCLUDE_DIRS})
+include_directories(${JSON-C_INCLUDE_DIRS})
 
 # Defina o diretório de saída para os binários
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -33,4 +37,9 @@ add_executable(GPSServer
 )
 
 # Adicione bibliotecas necessárias
-target_link_libraries(GPSServer ${MICROHTTPD_LIBRARIES} ${SQLite3_LIBRARIES} json-c pthread)
+target_link_libraries(GPSServer
+    ${MICROHTTPD_LIBRARIES}
+    ${SQLite3_LIBRARIES}
+    json-c
+    pthread
+)
