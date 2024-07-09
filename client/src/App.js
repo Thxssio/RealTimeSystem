@@ -1,10 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
+import { Canvas } from '@react-three/fiber';
+import Vehicle3D from './Vehicle3D';
 import 'leaflet/dist/leaflet.css';
 import './styles.css';
 
-const SERVER_IP = process.env.REACT_APP_SERVER_IP || 'http://localhost:8888';
+const SERVER_IP = process.env.REACT_APP_SERVER_IP || 'http://192.168.0.85:8888';
 
 // Cria o ícone personalizado usando CSS
 const createCustomIcon = (status) => {
@@ -64,7 +66,6 @@ const App = () => {
     }
   }, [gpsData]);
 
-  // Definindo limites para a área visualizável no mapa
   const bounds = [
     [-85, -180], // sudoeste
     [85, 180]    // nordeste
@@ -88,23 +89,39 @@ const App = () => {
         {gpsData && !isZeroedData(gpsData) && (
           <Marker position={[gpsData.latitude, gpsData.longitude]} icon={createCustomIcon(gpsData.status)}>
             <Popup>
-              <div>
-                <p>Latitude: {gpsData.latitude}</p>
-                <p>Longitude: {gpsData.longitude}</p>
-                <p>Altitude: {gpsData.altitude}m</p>
-                <p>Status: {gpsData.status}</p>
-                <p>Satélites: {gpsData.satellites}</p>
-                <p>Qualidade: {gpsData.quality}</p>
-              </div>
-              <div>
-                <h2>Informações dos Satélites:</h2>
-                <ul>
-                  {gpsData.satellites_info.map((sat, index) => (
-                    <li key={index}>
-                      PRN: {sat.prn}, Elevação: {sat.elevation}, Azimute: {sat.azimuth}, SNR: {sat.snr}
-                    </li>
-                  ))}
-                </ul>
+              <div className="popup-content">
+                <div>
+                  <p>Latitude: {gpsData.latitude}</p>
+                  <p>Longitude: {gpsData.longitude}</p>
+                  <p>Altitude: {gpsData.altitude}m</p>
+                  <p>Status: {gpsData.status}</p>
+                  <p>Satélites: {gpsData.satellites}</p>
+                  <p>Qualidade: {gpsData.quality}</p>
+                </div>
+                <div>
+                  <h2>Informações dos Satélites:</h2>
+                  <ul className="satellite-info">
+                    {gpsData.satellites_info.map((sat, index) => (
+                      <li key={index}>
+                        PRN: {sat.prn}, Elevação: {sat.elevation}, Azimute: {sat.azimuth}, SNR: {sat.snr}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h2>Dados do MPU9250:</h2>
+                  <ul className="mpu9250-info">
+                    <li>Aceleração X: {gpsData.accel_x}</li>
+                    <li>Aceleração Y: {gpsData.accel_y}</li>
+                    <li>Aceleração Z: {gpsData.accel_z}</li>
+                    <li>Giroscópio X: {gpsData.gyro_x}</li>
+                    <li>Giroscópio Y: {gpsData.gyro_y}</li>
+                    <li>Giroscópio Z: {gpsData.gyro_z}</li>
+                    <li>Magnetômetro X: {gpsData.mag_x}</li>
+                    <li>Magnetômetro Y: {gpsData.mag_y}</li>
+                    <li>Magnetômetro Z: {gpsData.mag_z}</li>
+                  </ul>
+                </div>
               </div>
             </Popup>
           </Marker>
@@ -115,6 +132,16 @@ const App = () => {
           </div>
         )}
       </MapContainer>
+      <Canvas className="vehicle-3d-canvas">
+        <ambientLight />
+        <pointLight position={[10, 10, 10]} />
+        {gpsData && !isZeroedData(gpsData) && (
+          <Vehicle3D 
+            position={[gpsData.latitude, gpsData.altitude, gpsData.longitude]} 
+            rotation={[gpsData.gyro_x, gpsData.gyro_y, gpsData.gyro_z]} 
+          />
+        )}
+      </Canvas>
     </div>
   );
 };

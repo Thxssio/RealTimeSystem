@@ -1,4 +1,5 @@
 #include "include/http_server_thread.h"
+#include "include/shared_data_types.h" 
 #include "include/utils.h"
 #include "include/gps.h"
 #include <microhttpd.h>
@@ -33,6 +34,15 @@ enum MHD_Result request_handler(void* cls, struct MHD_Connection* connection, co
     json_object_object_add(jobj, "quality", json_object_new_int(shared_data->gpgga_data.quality));
     json_object_object_add(jobj, "satellites", json_object_new_int(shared_data->gpgga_data.satellites));
     json_object_object_add(jobj, "status", json_object_new_string(shared_data->gps_connected ? "connected" : "disconnected"));
+    json_object_object_add(jobj, "accel_x", json_object_new_double(shared_data->mpu9250_data.accel_x));
+    json_object_object_add(jobj, "accel_y", json_object_new_double(shared_data->mpu9250_data.accel_y));
+    json_object_object_add(jobj, "accel_z", json_object_new_double(shared_data->mpu9250_data.accel_z));
+    json_object_object_add(jobj, "gyro_x", json_object_new_double(shared_data->mpu9250_data.gyro_x));
+    json_object_object_add(jobj, "gyro_y", json_object_new_double(shared_data->mpu9250_data.gyro_y));
+    json_object_object_add(jobj, "gyro_z", json_object_new_double(shared_data->mpu9250_data.gyro_z));
+    json_object_object_add(jobj, "mag_x", json_object_new_double(shared_data->mpu9250_data.mag_x));
+    json_object_object_add(jobj, "mag_y", json_object_new_double(shared_data->mpu9250_data.mag_y));
+    json_object_object_add(jobj, "mag_z", json_object_new_double(shared_data->mpu9250_data.mag_z));
 
     struct json_object* sat_array = json_object_new_array();
     for (int i = 0; i < shared_data->gsv_data.num_satellites; ++i) {
